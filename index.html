@@ -3,15 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <title>Professional Resume</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            padding: 2rem 1rem;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--text-dark);
+            padding-bottom: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .job, .education {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .company, .school {
+            color: var(--primary);
+        }
+
+        .date {
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 0.5rem;
+            color: var(--text-light);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1xl));
+            gap: 0.75rem;
+        }
+
+        .skill-category font-weight: bold; {
+            margin-bottom: 0.25rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .resume-container { padding: 1.5rem; border-radius: 0; }
+            .job-header, .edu-header { flex-direction: column; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .resume-container { box-shadow: none; padding: 0; }
+            button { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Hello, World!</h1>
+    <div class="resume-container">
+        <header>
+            <h1>Your Name</h1>
+            <div class="subtitle">Your Profession / Target Job Title</div>
+            <div class="contact-info">
+                <span>📍 Location, City</span>
+                <span>📞 (123) 456-7890</span>
+                <span>✉️ email@example.com</span>
+                <span>🔗 ://linkedin.com</span>
+            </div>
+        </header>
 
-    <!-- Link to your JavaScript file -->
-    <script src="script.js"></script>
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>A brief, 2-3 sentence overview of your key expertise, years of experience, and what value you bring to a prospective employer. Tailor this to your target industry.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <span>Job Title</span>
+                    <span class="date">Month 20XX -- Present</span>
+                </div>
+                <div class="company">Company Name -- City, State</div>
+                <ul>
+                    <li>Accomplished X, measured by Y, by doing Z.</li>
+                    <li>Led a core project or team that resulted in an efficiency increase.</li>
+                    <li>Utilized specific industry skills or tools to solve a key business problem.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>Previous Job Title</span>
+                    <span class="date">Month 20XX -- Month 20XX</span>
+                </div>
+                <div class="company">Previous Company Name -- City, State</div>
+                <ul>
+                    <li>Managed daily operations or workflows efficiently.</li>
+                    <li>Collaborated with cross-functional partners to execute deliverables.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div><strong>Technical:</strong> Skill 1, Skill 2, Skill 3</div>
+                <div><strong>Tools/Software:</strong> Tool 1, Tool 2, Tool 3</div>
+                <div><strong>Certifications:</strong> Cert 1, Cert 2</div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="edu-header">
+                    <span>Degree / Major</span>
+                    <span class="date">Graduation Year</span>
+                </div>
+                <div class="school">University Name -- City, State</div>
+            </div>
+        </section>
+    </div>
+
 </body>
 </html>
